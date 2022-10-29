@@ -33,7 +33,7 @@ scoreboard = Scoreboard()#create a scoreboard
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.03)
     ball.move()
     #detect collision with wall
     if ball.ycor() > (SCREEN_HEIGHT/2 -20) or ball.ycor() < -(SCREEN_HEIGHT/2 -20):
@@ -48,8 +48,5 @@ while game_is_on:
     #detect collision with paddle
     if ball.distance(paddleSx) < 50 and ball.xcor() <= -330 or ball.distance(paddleDx) < 50 and ball.xcor() >= 330:
         ball.bounce_x()
-        # screen.update()
-        # ball.move()
-
 
 screen.exitonclick()
